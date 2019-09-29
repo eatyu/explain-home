@@ -1,8 +1,13 @@
 /**
  * 全局action
  */
-export const INCREASE = 'INCREASE'
-export const DECREASE = 'DECREASE'
+export const actionTypes = {
+    DEFAULT: 'DEFAULT',
+    ACTUAL: 'ACTUAL',
+    INCREASE: 'INCREASE',
+    DECREASE: 'DECREASE'
+}
+
 
 /**
  * action方法
