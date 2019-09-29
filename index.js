@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
+import Item from "@/src/components/Item"
+
 ReactDOM.render(
-    <dev>ok</dev>,
+    <Item></Item>,
   document.getElementById("app")
 );
