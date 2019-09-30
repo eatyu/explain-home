@@ -5,13 +5,15 @@ const defaultValue = {
         {
             name: "item",
             desc: "item"
-        }
+        },
+    com_name:"item"
 }
 
 const itemReducer = (state = defaultValue, action) => {
     switch (action.type) {
         case actionTypes.ACTUAL:
-            return {ItemValue:action.ItemValue}
+            // return Object.assign({}, state,{com_name:"jerry"})
+            return Object.assign({}, state,{ItemValue:action.ItemValue,com_name:"jerry"})
         default:
             return state
     }

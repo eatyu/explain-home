@@ -10,7 +10,7 @@ const ItemValue = {
     desc: "the beginning of this project"
 }
 
-class ItemC extends React.Component {
+class Item extends React.Component {
 
     constructor(props) {
         super(props)
@@ -18,21 +18,23 @@ class ItemC extends React.Component {
     }
 
     render() {
-        const {ItemValue, actual} = this.props
+        const { ItemValue,actual} = this.props
         return (
-            <dev>
+            <div>
                 <p>{ItemValue.name}</p>
                 <p>{ItemValue.desc}</p>
+                <p>{this.props.com_name}</p>
                 <button onClick={actual}>change</button>
-            </dev>
+            </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
-    return {
-        ItemValue: state.itemReducer.ItemValue
-    }
+    // return {
+    //     ItemValue: state.itemReducer.ItemValue
+    // }
+    return state.itemReducer
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
@@ -41,7 +43,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
 }
 
-let Item = connect(mapStateToProps, mapDispatchToProps)(ItemC)
-
-
-export default Item
+export default connect(mapStateToProps, mapDispatchToProps)(Item)
