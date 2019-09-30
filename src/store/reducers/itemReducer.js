@@ -1,16 +1,19 @@
 import {actionTypes} from "@/src/store/actions"
 
 const defaultValue = {
-    name: "item",
-    desc: "item"
+    ItemValue:
+        {
+            name: "item",
+            desc: "item"
+        }
 }
 
 const itemReducer = (state = defaultValue, action) => {
     switch (action.type) {
         case actionTypes.ACTUAL:
-            return state
+            return {ItemValue:action.ItemValue}
         default:
-            return defaultValue
+            return state
     }
 
 }

@@ -21,7 +21,6 @@ class ItemC extends React.Component {
         const {ItemValue, actual} = this.props
         return (
             <dev>
-                <p>kkkkk</p>
                 <p>{ItemValue.name}</p>
                 <p>{ItemValue.desc}</p>
                 <button onClick={actual}>change</button>
@@ -32,13 +31,13 @@ class ItemC extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        ItemValue: state.ItemReducer.ItemValue
+        ItemValue: state.itemReducer.ItemValue
     }
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
     return {
-        actual: () => dispatch({type: actionTypes.ACTUAL, ItemValue: ItemValue}),
+        actual: () => dispatch({type: actionTypes.ACTUAL, ItemValue}),
     }
 }
 
